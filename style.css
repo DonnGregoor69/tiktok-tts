@@ -1,14 +1,30 @@
-/* Estilos base */
+/* styles.css */
+
+/* Reset and Base Styles */
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: #F8F8F8;
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fee6e3 10%, #fedfde 80%, #dee1e2 94%);
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
   color: #333;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
@@ -18,116 +34,70 @@ body {
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 2.5rem;
   text-align: center;
-  border-bottom: 2px solid #333;
+  margin-bottom: 1rem;
 }
 
 p {
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-  --color: #FF6937;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
   text-align: center;
-  font-variant-ligatures: inherit;
-  font-variant-caps: inherit;
-  font-variant-numeric: inherit;
-  font-variant-east-asian: inherit;
-  font-weight: inherit;
-  font-stretch: inherit;
-  vertical-align: baseline;
-  font-family: avenir roman,sans-serif;
-  line-height: 25px;
-  font-size: 16px;
-  margin-top: 8px;
-  color: #717171;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #555;
 }
 
-/* Estilos para el cuadro de texto */
-textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  resize: none;
-}
-
-/* Estilo para el control de audio */
-#audio {
-  width: 100%;
-  margin: 20px 0;
-}
-
-/* Estilo para centrar los botones */
-.container div {
-  text-align: center;
-}
-
-button {
-  background-color: #1DA1F2;
-  color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  border: none;
-  font-size: 1rem;
-}
-
-/* Estilos para el selector de voz */
-label {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
+/* Inputs */
+textarea,
 select {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 0.75rem 1rem;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  appearance: none;
-  background-image: linear-gradient(to bottom, #fff, #f5f5f5);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px;
-}
-
-select option {
-  padding: 10px;
-}
-
-button[name='submit'] {
-  display: block;
-  margin: 0 auto;
-}
-
-.play-button, .download-button {
-  background: linear-gradient(to bottom right, #1DA1F2, #0E71C8);
-  color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  border: none;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
-  margin-right: 10px;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+  background-color: #fe2c55;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
 }
 
-.boton-contacto {
-  display: block;
-  margin-bottom: 40px;
+button:hover {
+  background-color: #e0245e;
 }
 
-/* Añadir media queries para pantallas pequeñas */
+.play-button,
+.download-button {
+  margin-right: 1rem;
+}
+
+/* Audio Player */
+#audio {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .container {
     padding: 20px 10px;
@@ -135,43 +105,20 @@ button[name='submit'] {
 
   h1 {
     font-size: 2rem;
-    margin-bottom: 15px;
   }
 
   p {
-    font-size: 14px;
-    line-height: 20px;
-    display: none;
+    font-size: 1rem;
   }
 
-  textarea {
-    font-size: 14px;
-    padding: 8px;
-    height: 40vh;
-    margin-bottom: 10px;
-  }
-
-  label {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-
+  textarea,
   select {
-    font-size: 14px;
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-
-  button, .play-button, .download-button {
     font-size: 0.9rem;
-    padding: 15px 25px;
+    padding: 0.6rem 0.8rem;
   }
 
-  .play-button, .download-button {
-    margin-bottom: 30px;
-  }
-
-  .boton-contacto {
-    display: none;
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 }
