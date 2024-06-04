@@ -1,100 +1,40 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="description" content="TT-TTS is a free text-to-speech tool currently in Beta. It allows you to generate audio for any video from platforms such as YouTube, TikTok, and Instagram. Share and give love!">
     <meta name="keywords" content="TT-TTS, text-to-speech, TTS, audio, YouTube, TikTok, Instagram">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M6FLQXGMNQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M6FLQXGMNQ');
-</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7650600872002577"
-     crossorigin="anonymous"></script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6FLQXGMNQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M6FLQXGMNQ');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7650600872002577" crossorigin="anonymous"></script>
     <title>TT-TTS - Tik Tok Text-to-Speech</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <meta name="google-site-verification" content="08Ll4mozQdB3D3Lszdo3tqlvWqj94PAPv8vm594cTf0" />
-   <!-- <button onclick="iniciarSesionConGoogle()">Login with Google</button> -->
-
     <div class="container">
       <h1>TT-TTS - Tik Tok Text-to-Speech</h1>
       <p>TT-TTS is a free text-to-speech tool currently in Beta. It allows you to generate audio for any video from platforms such as YouTube, TikTok, and Instagram. Share and give love!.</p>
-      <textarea id="texto" rows="10" cols="50"></textarea>
+      <textarea id="texto" rows="6" placeholder="Enter your text here..."></textarea>
       <label for="voiceSelector">Select a voice:</label>
       <select id="voice-select">
-        <option value="en_us_ghostface">Ghost Face</option>
-        <option value="en_us_chewbacca">Chewbacca</option>
-        <option value="en_us_c3po">C3PO</option>
-        <option value="en_us_stitch">Stitch</option>
-        <option value="en_us_stormtrooper">Stormtrooper</option>
-        <option value="en_us_rocket">Rocket</option>
-        <option value="en_female_madam_leota">Madame Leota</option>
-        <option value="en_male_ghosthost">Ghost Host</option>
-        <option value="en_male_pirate">Pirate</option>
-        <option value="en_au_001">English AU - Female</option>
-        <option value="en_au_002">English AU - Male</option>
-        <option value="en_uk_001">English UK - Male 1</option>
-        <option value="en_uk_003">English UK - Male 2</option>
-        <option value="en_us_001">English US - Female 1</option>
-        <option value="en_us_002">English US - Female 2</option>
-        <option value="en_us_006">English US - Male 1</option>
-        <option value="en_us_007">English US - Male 2</option>
-        <option value="en_us_009">English US - Male 3</option>
-        <option value="en_us_010">English US - Male 4</option>
-        <option value="en_male_narration" selected>Narrator</option>
-        <option value="en_male_funny">Wacky</option>
-        <option value="en_female_emotional">Peaceful</option>
-        <option value="en_male_cody">Serious</option>
-        <option value="fr_001">French - Male 1</option>
-        <option value="fr_002">French - Male 2</option>
-        <option value="de_001">German - Female</option>
-        <option value="de_002">German - Male</option>
-        <option value="es_002">Spanish - Male</option>
-        <option value="es_mx_002">Spanish MX - Male</option>
-        <option value="br_001">Portuguese BR - Female 1</option>
-        <option value="br_003">Portuguese BR - Female 2</option>
-        <option value="br_005">Portuguese BR - Male</option>
-
-        <option value="jp_001">Japanese - Female 1</option>
-        <option value="jp_003">Japanese - Female 2</option>
-        <option value="jp_005">Japanese - Female 3</option>
-        <option value="jp_006">Japanese - Male</option>
-        <option value="kr_002">Korean - Male 1</option>
-        <option value="kr_004">Korean - Male 2</option>
-        <option value="kr_003">Korean - Female</option>
-        <option value="en_female_f08_salut_damour">Alto</option>
-        <option value="en_male_m03_lobby">Tenor</option>
-        <option value="en_male_m03_sunshine_soon">Sunshine Soon</option>
-        <option value="en_female_f08_warmy_breeze">Warmy Breeze</option>
-        <option value="en_female_ht_f08_glorious">Glorious</option>
-        <option value="en_male_sing_funny_it_goes_up">It Goes Up</option>
-        <option value="en_male_m2_xhxs_m03_silly">Chipmunk</option>
-        <option value="en_female_ht_f08_wonderful_world">Dramatic</option>
-        
-
+        <!-- Voice options -->
       </select>
-      
       <div style="text-align: center;">
         <audio id="audio" controls></audio>
-        
         <button class="play-button" onclick="reproducirAudio()">Play</button>
-
         <button class="download-button" onclick="generarAudio()">Download</button>
-
-
-       <p>Donate (USDT - ETH): 0x7FaFA188CC2AcDA12CeA00fE206f27CD4834Da27</p>
+        <p>Donate (USDT - ETH): 0x7FaFA188CC2AcDA12CeA00fE206f27CD4834Da27</p>
       </div>
-
-      
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
